@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css"
+      integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <style>
+    * {
+      text-decoration: none;
+    }
+    a {
+      color: black;
+      font-weight: bold;
+    }
+    form fieldset {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: start;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    body {
+      width: 100%;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+    }
+    button {
+      padding: 10px 30px;
+      border-radius: 25px;
+    }
+    span {
+      position: relative;
+      top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    i {
+      visibility: hidden;
+    }
+  </style>
+  <body>
+    <form id="quizForm">
+      <fieldset>
+        1. They ______________ her and trusted her for years
+        <div><input type="radio" value="a1" name="first" />A. know</div>
+        <div><input type="radio" value="a2" name="first" />B. had known</div>
+        <div><input type="radio" value="a3" name="first" />C. knew</div>
+        <div><input type="radio" value="a4" name="first" />D. known</div>
+      </fieldset>
+      <fieldset>
+        2. Every morning she ______________ up early and gets ready for work.
+        <div><input type="radio" name="second" value="b1" />A. is waking</div>
+        <div><input type="radio" name="second" value="b2" />B. has woken</div>
+        <div><input type="radio" name="second" value="b3" />C. had woken</div>
+        <div><input type="radio" name="second" value="b4" />D. wakes</div>
+      </fieldset>
+      <fieldset>
+        3. People ______________ walk on grass.
+        <div><input type="radio" name="third" value="c1" />A. couldn't</div>
+        <div><input type="radio" name="third" value="c2" />B. needn't</div>
+        <div><input type="radio" name="third" value="c3" />C. mustn't</div>
+        <div><input type="radio" name="third" value="c4" />D. may not</div>
+      </fieldset>
+      <fieldset>
+        4. ______________ you speak any foreign languages?
+        <div><input type="radio" name="forth" value="d1" />A. can't</div>
+        <div><input type="radio" name="forth" value="d2" />B. should</div>
+        <div><input type="radio" name="forth" value="d3" />C. couldn't</div>
+        <div><input type="radio" name="forth" value="d4" />D. can</div>
+      </fieldset>
+      <fieldset>
+        5. World war I and World war II took place ______________ the 20th century.
+        <div><input type="radio" name="five" value="51" />A. on</div>
+        <div><input type="radio" name="five" value="52" />B. in</div>
+        <div><input type="radio" name="five" value="53" />C. at</div>
+        <div><input type="radio" name="five" value="54" />D. into</div>
+      </fieldset>
+      <fieldset>
+        6. They built this temple 3,000 years ago. This must ______________ a great civilization.
+        <div><input type="radio" name="six" value="61" />A. not have been</div>
+        <div><input type="radio" name="six" value="62" />B. was</div>
+        <div><input type="radio" name="six" value="63" />C. has been</div>
+        <div><input type="radio" name="six" value="64" />D. have been</div>
+      </fieldset>
+      <fieldset>
+        7. I wanted to go to the park, ______________ my mother refused.
+        <div><input type="radio" name="seven" value="71" />A. but</div>
+        <div><input type="radio" name="seven" value="72" />B. or</div>
+        <div><input type="radio" name="seven" value="73" />C. so</div>
+        <div></i><input type="radio" name="seven" value="74" />D. and</div>
+      </fieldset>
+      <fieldset>
+        8. Change the active voice into passive voice: I will clean the house every Saturday. The house ______________ by me every Saturday.
+        <div><input type="radio" name="eight" value="81" />A. cleaned</div>
+        <div><input type="radio" name="eight" value="82" />B. will cleaned</div>
+        <div><input type="radio" name="eight" value="83" />C. will be cleaned</div>
+        <div><input type="radio" name="eight" value="84" />D. None of the above</div>
+      </fieldset>
+      <fieldset>
+        9. This must not happen again, ______________ you will be dismissed.
+        <div><input type="radio" name="nine" value="91" />A. or</div>
+        <div><input type="radio" name="nine" value="92" />B. but</div>
+        <div><input type="radio" name="nine" value="93" />C. and</div>
+        <div><input type="radio" name="nine" value="94" />D. so</div>
+      </fieldset>
+      <fieldset>
+        10. If A is equal to B and B is equal to C, ______________ A is equal to C.
+        <div><input type="radio" name="ten" value="11" />A. than</div>
+        <div><input type="radio" name="ten" value="12" />B. then</div>
+        <div><input type="radio" name="ten" value="13" />C. so</div>
+        <div><input type="radio" name="ten" value="14" />D. none of the above</div>
+      </fieldset>
+
+      <span><button type="submit">Submit</button></span>
+    </form>
+
+    <script>
+      let score = 0;
+      let ir=document.getElementsByTagName("i")
+      let ipr = document.querySelectorAll("input")
+      let btn = document.getElementsByTagName("button")[0]
+
+      document.getElementById("quizForm").addEventListener("submit", function (event) {
+          event.preventDefault();
+          score = 0;
+          
+      
+          // Validate question 1
+          let firstAnswer = document.querySelector('input[name="first"]:checked');
+          if (firstAnswer && firstAnswer.value === "a3") {
+              score++;
+              
+          }
+          
+      
+          // Validate question 2
+          let secondAnswer = document.querySelector('input[name="second"]:checked');
+          if (secondAnswer && secondAnswer.value === "b4") {
+              score++;
+          }
+      
+          // Validate question 3
+          let thirdAnswer = document.querySelector('input[name="third"]:checked');
+          if (thirdAnswer && thirdAnswer.value === "c3") {
+              score++;
+          }
+      
+          // Validate question 4
+          let forthAnswer = document.querySelector('input[name="forth"]:checked');
+          if (forthAnswer && forthAnswer.value === "d4") {
+              score++;
+          }
+      
+          // Validate question 5
+          let fiveAnswer = document.querySelector('input[name="five"]:checked');
+          if (fiveAnswer && fiveAnswer.value === "52") {
+              score++;
+          }
+      
+          // Validate question 6
+          let sixAnswer = document.querySelector('input[name="six"]:checked');
+          if (sixAnswer && sixAnswer.value === "64") {
+              score++;
+          }
+      
+          // Validate question 7
+          let sevenAnswer = document.querySelector('input[name="seven"]:checked');
+          if (sevenAnswer && sevenAnswer.value === "71") {
+              score++;
+          }
+      
+          // Validate question 8
+          let eightAnswer = document.querySelector('input[name="eight"]:checked');
+          if (eightAnswer && eightAnswer.value === "83") {
+              score++;
+          }
+      
+          // Validate question 9
+          let nineAnswer = document.querySelector('input[name="nine"]:checked');
+          if (nineAnswer && nineAnswer.value === "91") {
+              score++;
+          }
+      
+          // Validate question 10
+          let tenAnswer = document.querySelector('input[name="ten"]:checked');
+          if (tenAnswer && tenAnswer.value === "12") {
+              score++;
+          }
+      
+         
+          localStorage.setItem("score", score);
+      
+        
+          let formElements = document.getElementById("quizForm").elements;
+          for (let i = 0; i < formElements.length; i++) {
+              formElements[i].disabled = true;
+          }
+          window.location.href = "http://127.0.0.1:5500/result.html"; 
+         
+      });
+    
+      
+    </script>
+  </body>
+</html>

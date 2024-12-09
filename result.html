@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    button{
+      position: relative;
+      top: 30px;
+      padding: 8px 20px;
+      background-color:blueviolet;
+      color: white;
+      font-weight: bold;
+      border-radius: 20px;
+      
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <div>
+      <h1 id="result"></h1>
+    </div>
+    <button onclick="redirect()">Check answers <i class="fa-solid fa-arrow-right"></i></button>
+    <script>
+      let score = localStorage.getItem("score");
+      console.log(score);
+      if (score < 5) {
+        document.getElementById(
+          "result"
+        ).innerHTML = `You scored: ${score} out of 10.`;
+        document.getElementById("result").style.color = "red";
+      } else {
+        document.getElementById(
+          "result"
+        ).innerHTML = `You scored: ${score} out of 10.`;
+        document.getElementById("result").style.color = "green";
+      }
+      let redirect=()=>{
+        window.location.href="http://127.0.0.1:5500/answer.html"
+      }
+    </script>
+  </body>
+</html>
